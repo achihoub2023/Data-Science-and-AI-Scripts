@@ -1,2 +1,2 @@
 # KNN_Project
-These are some data science scripts written for fun and for my Probabilty and Random Processes Class, Summer 2020.
+These are some data science/AI scripts written for fun and for my Probabilty and Random Processes Class, Summer 2020.
