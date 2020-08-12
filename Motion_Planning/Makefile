@@ -1,11 +1,11 @@
 CXX = g++
 CXXFLAGS = -c 
 
-A: A.o
-	$(CXX) A.o -o output
+A: Graph.o
+	$(CXX) Graph.o -o output
 
 A.o: A.cpp
-	g++ -c A.cpp
+	g++ -c Graph.cpp
 
 clean:
 	rm *.o  output
