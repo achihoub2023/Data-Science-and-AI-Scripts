@@ -1,11 +1,15 @@
+#set up the flags needed
 CXX = g++
 CXXFLAGS = -c 
 
-search: search.o Graph.o
-	$(CXX) search.o Graph.o -o output
+#Dependencies for the output file
+search: search_driver.o Graph.o
+	$(CXX) search_driver.o Graph.o -o output
 
-search.o: search.cpp Graph.cpp Graph.hpp
-	g++ -c search.cpp Graph.cpp
+#Dependencies for the driver method
+search.o: search_driver.cpp Graph.cpp Graph.hpp
+	g++ -c search_driver.cpp Graph.cpp
 
+#Clean
 clean:
 	rm *.o  output
