@@ -1,2 +1,2 @@
 *.dSYM
-Contents/*
+**/Contents
