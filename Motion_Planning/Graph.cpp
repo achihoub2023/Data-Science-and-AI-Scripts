@@ -6,7 +6,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-
+//Insertion method to insert a new node into the adjacency list @param pointer to the new node, its value, and its weighted distance
 Node* Graph::insert(Node* head, int identifier, int givenWeight){
     //Create a new node and using the data provided in the params, attatch it to the head
     Node* nodeToInsert = new Node;
@@ -16,10 +16,12 @@ Node* Graph::insert(Node* head, int identifier, int givenWeight){
     return nodeToInsert;
 }
 
+//get Size method 
 int Graph::getSize(){
     return size;
 }
 
+//Constructor for the Graph class 
 Graph::Graph(Edge listOfEdges[], int numEdges, int numVertices){
     //Initialize the adjacency list 
     head = new Node*[numVertices]();
@@ -42,6 +44,3 @@ Graph::Graph(Edge listOfEdges[], int numEdges, int numVertices){
         head[first_vertex] = addedNode;
         }
 }
-
-
-

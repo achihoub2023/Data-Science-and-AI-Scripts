@@ -1,3 +1,4 @@
+//Struct that represents a Node in the 
 struct Node{
     int number;
     int weight;
