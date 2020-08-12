@@ -1,57 +1,47 @@
 #include <stdio.h>
 #include <iostream>
+#include "Graph.hpp"
 using namespace std;
 using std::cout;
 using std::cin;
 using std::endl;
 
-// Note, implementation is of a weighted, directed graph
 
-//Basic node in the graph with its weight, its number, and the next node
-struct Node{
-    int number;
-    int weight;
-    Node* next;
-};
-
-//Edges link the nodes together.
-struct Edge{
-    int firstNode;
-    int secondNode;
-    int weight;
-};
-
-
-class Graph{
-    
-    //TODO add the constructor to read a txt file with edges
-    public:
-
-
-
-
-
-
-
-
-
-
-
-
-
-};
-
-
-
-
-
-int main(){
-    int dimA,dimB;
-    cout << "Enter dimA: ";
-    cin >> dimA;
-    cout<<"Enter dimB: ";
-    cin >> dimB;
-
-    
-    return 0;
+Node* Graph::insert(Node* head, int identifier, int givenWeight){
+    //Create a new node and using the data provided in the params, attatch it to the head
+    Node* nodeToInsert = new Node;
+    nodeToInsert->number = identifier;
+    nodeToInsert ->weight =  givenWeight;
+    nodeToInsert->next = head;
+    return nodeToInsert;
 }
+
+int Graph::getSize(){
+    return size;
+}
+
+Graph::Graph(Edge listOfEdges[], int numEdges, int numVertices){
+    //Initialize the adjacency list 
+    head = new Node*[numVertices]();
+    this->size = numVertices;
+
+    //make each element in the adjacency list null as to fill them in later
+    for(int i  = 0; i< numVertices; i++){
+        head[i] = nullptr;
+    }
+            
+    //For loop to fill in the adjacency lists
+    for(unsigned i = 0; i<numEdges; i++){
+        //get the value of previous node, the next node, and the weight between them
+        int first_vertex = listOfEdges[i].firstNode;
+        int last_vertex = listOfEdges[i].secondNode;
+        int current_weight= listOfEdges[i].weight;
+
+        //Insert the new node
+        Node* addedNode = insert(head[first_vertex],last_vertex,current_weight);
+        head[first_vertex] = addedNode;
+        }
+}
+
+
+
