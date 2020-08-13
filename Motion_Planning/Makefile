@@ -3,11 +3,11 @@ CXX = g++
 CXXFLAGS = -c 
 
 #Dependencies for the output file
-search: search_driver.o Graph.o
+search_driver: search_driver.o Graph.o A*.o Djikstra.o
 	$(CXX) search_driver.o Graph.o -o output
 
 #Dependencies for the driver method
-search.o: search_driver.cpp Graph.cpp Graph.hpp
+search_driver.o: search_driver.cpp Graph.cpp Graph.hpp A*.cpp Djikstra.cpp search.hpp
 	g++ -c search_driver.cpp Graph.cpp
 
 #Clean
