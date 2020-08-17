@@ -1,1 +1,1 @@
-This is and implementation of the Inverse Transform Method targeted towards the Laplace Distribution with E[X]=0 and Var[X] = 2/9. A report is attatched for those interested on this particular experiment.
+This is and implementation of the Inverse Transform Method targeted towards the Laplace Distribution with E[X]=0 and Var[X] = 2/9. A report is attatched for those interested on this particular experiment. If you wish to cite the report, please direct message me for more details. 
